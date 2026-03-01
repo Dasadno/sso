@@ -1,5 +1,5 @@
 env: "local" # dev, prod
-CONNECT_STRING: "./storage/sso.db"
+CONNECT_STRING: "your_connect_string" #  
 token_ttl: 1h
 grpc:
   port: 44044
