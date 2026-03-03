@@ -1,4 +1,4 @@
-package grpcApp
+package grpc
 
 import (
 	"fmt"
