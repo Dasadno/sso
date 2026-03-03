@@ -1,9 +1,9 @@
 github.com/BurntSushi/toml v1.2.1 h1:9F2/+DoOYIOksmaJFPw1tGFy1eDnIJXg+UHjuD8lTak=
 github.com/BurntSushi/toml v1.2.1/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbicEuybxQ=
-github.com/Dasadno/sso v0.0.0-20260303100348-81303d686e98 h1:G/gc2DBcyyZwHEag/kkiIqxs9XWj5gmnxeLZMdLzOkM=
-github.com/Dasadno/sso v0.0.0-20260303100348-81303d686e98/go.mod h1:YTNJRbFRZkZQI7q2EDIqqCr3JoJx+Hb/sRLY3QWp7cY=
 github.com/Dasadno/sso-protos v0.0.0-20260301130538-8ec6ab978549 h1:kNdpOKcrLfj0eqrJ7ckPntBKwYBN+6A7Y7uRGy8Hi34=
 github.com/Dasadno/sso-protos v0.0.0-20260301130538-8ec6ab978549/go.mod h1:Hm6X9UArAXCimBxd+0gdlslehcei6daKVjZBFC6Pi4s=
+github.com/Dasadno/sso-protos v0.0.0-20260303141735-d741870720f5 h1:QAnjQYXontBA0dDnBQc5Woj5+2z9e8NV8dsSySJ9DTU=
+github.com/Dasadno/sso-protos v0.0.0-20260303141735-d741870720f5/go.mod h1:Hm6X9UArAXCimBxd+0gdlslehcei6daKVjZBFC6Pi4s=
 github.com/cespare/xxhash/v2 v2.3.0 h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UFvs=
 github.com/cespare/xxhash/v2 v2.3.0/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=

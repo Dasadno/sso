@@ -3,8 +3,7 @@ module github.com/Dasadno/sso
 go 1.25.0
 
 require (
-	github.com/Dasadno/sso v0.0.0-20260303100348-81303d686e98
-	github.com/Dasadno/sso-protos v0.0.0-20260301130538-8ec6ab978549
+	github.com/Dasadno/sso-protos v0.0.0-20260303141735-d741870720f5
 	github.com/go-playground/validator/v10 v10.30.1
 	github.com/google/uuid v1.6.0
 	github.com/ilyakaznacheev/cleanenv v1.5.0

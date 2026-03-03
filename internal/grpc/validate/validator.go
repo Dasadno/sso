@@ -15,6 +15,7 @@ func init() {
 	register(V)
 }
 
+// password validation
 func validateStrongPassword(fl validator.FieldLevel) bool {
 	password := fl.Field().String()
 
@@ -34,6 +35,7 @@ func validateStrongPassword(fl validator.FieldLevel) bool {
 	return hasUpper && hasDigit
 }
 
+// init my validate options
 func register(V *validator.Validate) {
 	V.RegisterValidation("passwd", validateStrongPassword)
 }

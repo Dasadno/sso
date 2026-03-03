@@ -26,12 +26,12 @@ func (s *serverApi) Login(
 	req *ssov1.LoginRequest,
 ) (*ssov1.LoginResponce, error) {
 	l := models.Login{
-		Email:    req.Email,
-		Password: req.Password,
+		Email:    req.GetEmail(),
+		Password: req.GetPassword(),
 	}
 	err := validate.V.Struct(l)
 	if err != nil {
-		slog.Error("Incorrect enter")
+		slog.Error("Validation error")
 		return nil, status.Error(codes.InvalidArgument, "Error: Invalid argument")
 	}
 	return &ssov1.LoginResponce{
@@ -43,7 +43,17 @@ func (s *serverApi) Register(
 	ctx context.Context,
 	req *ssov1.RegisterRequest,
 ) (*ssov1.RegisterResponce, error) {
-	panic("implement me")
+	l := models.Register{
+		Email:             req.GetEmail(),
+		Password:          req.GetPassword(),
+		PasswordConfirmed: req.GetPasswordConfirmed(),
+	}
+	err := validate.V.Struct(l)
+	if err != nil {
+		slog.Error("Validation error")
+		return nil, status.Error(codes.InvalidArgument, "Error: invalid argument")
+	}
+
 }
 func (s *serverApi) IsAdmin(
 	ctx context.Context,
