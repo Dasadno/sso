@@ -35,7 +35,7 @@ func (s *serverApi) Login(
 		return nil, status.Error(codes.InvalidArgument, "Error: Invalid argument")
 	}
 	return &ssov1.LoginResponce{
-		Token: uuid.NewString(),
+		Token: uuid.NewString(), //Generate JWT must be here
 	}, nil
 }
 
@@ -53,7 +53,9 @@ func (s *serverApi) Register(
 		slog.Error("Validation error")
 		return nil, status.Error(codes.InvalidArgument, "Error: invalid argument")
 	}
-
+	return &ssov1.RegisterResponce{
+		Id: int64(uuid.Max.ID()),
+	}, nil
 }
 func (s *serverApi) IsAdmin(
 	ctx context.Context,
