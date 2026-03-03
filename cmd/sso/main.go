@@ -1,13 +1,12 @@
 package main
 
 import (
-	"context"
-	"fmt"
 	"log/slog"
 	"os"
 	"os/signal"
-	"time"
+	"syscall"
 
+	"github.com/Dasadno/sso/internal/app"
 	"github.com/Dasadno/sso/internal/config"
 )
 
@@ -20,15 +19,19 @@ const (
 func main() {
 	cfg := config.MustLoad()
 	log := setupLogger(cfg.Env)
-	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
-	defer stop()
-
 	log.Info("starting application")
-	fmt.Println(cfg)
 
-	// gracefull shutdown
-	<-ctx.Done()
-	log.Info("close application with signal interrupt | Timestamp: ", time.Now())
+	application := app.New(log, cfg.GRPC.Port, cfg.ConnectString, cfg.TokenTTL)
+
+	go application.GRPCrv.MustRun()
+
+	stop := make(chan os.Signal, 1)
+	signal.Notify(stop, syscall.SIGTERM, syscall.SIGINT)
+
+	sign := <-stop
+
+	log.Info("stopping appplication", slog.String("signal", sign.String()))
+	application.GRPCrv.Stop()
 }
 
 func setupLogger(env string) *slog.Logger {

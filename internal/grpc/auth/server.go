@@ -19,7 +19,9 @@ func (s *serverApi) Login(
 	ctx context.Context,
 	req *ssov1.LoginRequest,
 ) (*ssov1.LoginResponce, error) {
-	panic("implent me")
+	return &ssov1.LoginResponce{
+		Token: "token1234",
+	}, nil
 }
 
 func (s *serverApi) Register(
@@ -32,5 +34,5 @@ func (s *serverApi) IsAdmin(
 	ctx context.Context,
 	req *ssov1.IsAdminRequest,
 ) (*ssov1.IsAdminResponce, error) {
-
+	panic("impolement me")
 }
